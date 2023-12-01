@@ -30,7 +30,7 @@ export function Login() {
 
   return (
     <div id="login">
-      <h1>Login</h1>
+      <h1 className="text-2xl">Login</h1>
       <ul>
         {errors.map((error) => (
           <li key={error}>{error}</li>
@@ -38,10 +38,20 @@ export function Login() {
       </ul>
       <form onSubmit={handleSubmit}>
         <div>
-          Email: <input name="email" type="email" />
+          Email:{" "}
+          <input
+            className="block flex-1 border-2 bg-transparent py-1.5 pl-1 text-gray-900 focus:ring-0 sm:text-sm sm:leading-6"
+            name="email"
+            type="email"
+          />
         </div>
         <div>
-          Password: <input name="password" type="password" />
+          Password:{" "}
+          <input
+            className="block flex-1 border-2 bg-transparent py-1.5 pl-1 text-gray-900 focus:ring-0 sm:text-sm sm:leading-6"
+            name="password"
+            type="password"
+          />
         </div>
         <button type="submit">Login</button>
       </form>

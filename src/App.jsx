@@ -8,7 +8,9 @@ function App() {
     <div>
       <BrowserRouter>
         <Header />
-        <Content />
+        <div className="container mx-auto p-2">
+          <Content />
+        </div>
         <Footer />
       </BrowserRouter>
     </div>

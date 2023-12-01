@@ -1,32 +1,34 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable react/prop-types */
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useParams } from "react-router-dom";
-import axios from "axios";
 
 export function ProductsShowPage(props) {
-  const [product, setProduct] = useState({});
   const pageparams = useParams();
-
-  const handleShowProduct = () => {
-    axios.get(`http://localhost:3000/products/${pageparams.id}.json`).then((response) => {
-      setProduct(response.data);
-    });
-  };
+  console.log("words", pageparams);
 
   const handleClick = () => {
-    const params = { product_id: pageparams.id };
+    const params = { product_id: props.product.id };
     props.onCartProduct(params);
   };
 
-  useEffect(handleShowProduct, []);
+  useEffect(() => props.onShowProduct(pageparams), []);
 
   return (
     <div>
-      <h1>{product.name}</h1>
-      <p>{product.description}</p>
-      <p>Price: {product.price}</p>
-      <button onClick={handleClick}>add to cart</button>
+      <h1>{props.product.name}</h1>
+      <p>{props.product.description}</p>
+      <p>Price: {props.product.price}</p>
+      {/* <div>
+        {props.product.images.map((image) => (
+          <div key={image.id}>
+            <img src={image.url} />
+          </div>
+        ))}
+      </div> */}
+      <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" onClick={handleClick}>
+        add to cart
+      </button>
     </div>
   );
 }
