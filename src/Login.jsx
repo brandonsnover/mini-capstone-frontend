@@ -14,7 +14,7 @@ export function Login() {
     setErrors([]);
     const params = new FormData(event.target);
     axios
-      .post("https://mini-capstone-frontend-kkfd.onrender.com/sessions.json", params)
+      .post("https://mini-capstone-api-ud5u.onrender.com/sessions.json", params)
       .then((response) => {
         console.log(response.data);
         axios.defaults.headers.common["Authorization"] = "Bearer " + response.data.jwt;
