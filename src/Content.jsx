@@ -14,25 +14,25 @@ export function Content() {
   const [orders, setOrders] = useState([]);
 
   const handleIndexProducts = () => {
-    axios.get("http://localhost:3000/products.json").then((response) => {
+    axios.get("https://mini-capstone-frontend-kkfd.onrender.com/products.json").then((response) => {
       setProducts(response.data);
     });
   };
 
   const handleCartProduct = (params) => {
-    axios.post("http://localhost:3000/carted_products.json", params);
+    axios.post("https://mini-capstone-frontend-kkfd.onrender.com/carted_products.json", params);
     console.log(params);
   };
 
   const handleDestroyCartedProduct = (carted_product) => {
-    axios.delete(`http://localhost:3000/carted_products/${carted_product.id}.json`).then((response) => {
+    axios.delete(`https://mini-capstone-frontend-kkfd.onrender.com/carted_products/${carted_product.id}.json`).then((response) => {
       console.log(response);
       setCart(cart.filter((r) => r.id !== carted_product.id));
     });
   };
 
   const handleCartedProducts = () => {
-    axios.get("http://localhost:3000/carted_products.json").then((response) => {
+    axios.get("https://mini-capstone-frontend-kkfd.onrender.com/carted_products.json").then((response) => {
       setCart(response.data);
     });
   };
@@ -45,7 +45,7 @@ export function Content() {
   };
 
   const handleIndexOrders = () => {
-    axios.get("http://localhost:3000/orders.json").then((response) => {
+    axios.get("https://mini-capstone-frontend-kkfd.onrender.com/orders.json").then((response) => {
       setOrders(response.data);
     });
   };
