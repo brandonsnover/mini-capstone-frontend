@@ -18,7 +18,7 @@ export function ProductsShowPage(props) {
     <div>
       <h1>{props.product.name}</h1>
       <p>{props.product.description}</p>
-      <p>Price: {props.product.price}</p>
+      <p>Price: ${props.product.price}</p>
       {/* <div>
         {props.product.images.map((image) => (
           <div key={image.id}>

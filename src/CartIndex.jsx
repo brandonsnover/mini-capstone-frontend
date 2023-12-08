@@ -13,7 +13,7 @@ export function CartIndex(props) {
           <div key={carted_product.id}>
             <h3>{carted_product.name}</h3>
             <p>Name: {carted_product.product.name}</p>
-            <p>Price: {carted_product.product.price}</p>
+            <p>Price: ${carted_product.product.price}</p>
             <div>
               {carted_product.images.map((image) => (
                 <div key={image.id}>
